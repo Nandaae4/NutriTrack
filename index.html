@@ -1,40 +1,61 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>NutriTrack | Health Planner</title>
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  </head>
-  <body>
-    <div class="app">
-      <header>
-        <h1>NutriTrack</h1>
-        <p>Monitor nutrisi harianmu</p>
-      </header>
+<head>
+  <meta charset="UTF-8">
+  <title>NutriTrack</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
 
-      <div class="card">
-        <div class="form-group">
-          <label>Berat (kg)</label>
-          <input id="berat" type="number" placeholder="Contoh: 60" />
-        </div>
-        <div class="form-group">
-          <label>Tinggi (cm)</label>
-          <input id="tinggi" type="number" placeholder="Contoh: 170" />
-        </div>
-        <div class="form-group">
-          <label>Umur</label>
-          <input id="umur" type="number" placeholder="Contoh: 20" />
-        </div>
+<div class="app">
 
-        <div class="grid-2">
-          <div class="form-group">
-            <label>Gender</label>
-            <select id="gender">
-              <option value="pria">Pria</option>
-              <option value="wanita">Wanita</option>
-            </select>
+  <h1>NutriTrack</h1>
+
+  <div class="card">
+    <input id="berat" type="number" placeholder="Berat (kg)">
+    <input id="tinggi" type="number" placeholder="Tinggi (cm)">
+    <input id="umur" type="number" placeholder="Umur">
+
+    <select id="gender">
+      <option value="pria">Pria</option>
+      <option value="wanita">Wanita</option>
+    </select>
+
+    <select id="aktivitas">
+      <option value="rendah">Low Activity</option>
+      <option value="sedang">Moderate Activity</option>
+      <option value="tinggi">High Activity</option>
+    </select>
+
+    <select id="target">
+      <option value="turun">Turun Berat</option>
+      <option value="naik">Naik Berat</option>
+    </select>
+
+    <button onclick="proses()">Generate</button>
+  </div>
+
+  <div id="loading" class="card hidden">
+    <div class="spinner"></div>
+    <p>Menyiapkan menu kamu...</p>
+  </div>
+
+  <div id="hasil" class="card"></div>
+
+  <div class="card">
+    <canvas id="chart"></canvas>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+index.html
+Info Umum
+JenisHTML
+Menampilkan index.html.            </select>
           </div>
           <div class="form-group">
             <label>Aktivitas</label>
